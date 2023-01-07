@@ -15,7 +15,7 @@ There are scripts for running the build process, starting the server, and runnin
 - `start:prod` and `start:dev` starts the server with the appropriate environment.
 - `prod` and `dev` runs the build step and starts the server
 - All options that have watch at the end run the same command but in watch mode.
-- `test` runs the `mocha` tests. Note that it does not build.
+- `test` runs the `vitest` tests. Note that it does not build.
 
 ## About Structure
 - The `.env` and `.env.dev` are for production and development respectively
@@ -29,11 +29,4 @@ There are scripts for running the build process, starting the server, and runnin
     - `services` are responsible for interfacing with external data providers (ex. database), API's, or other data producing logic that a controller would need.
     - `utils` are commonly used functions.
     - `index.ts` is the main file that is ran when server starts
-- Test is split into unit tests and integration tests (mocking still needs to be implemented for integration tests).
-
-
-## Shortcomings in Testing
-
-There are still some missing parts to this repository. The testing framework used, `mocha`, does not support watch mode. Additionally, mocking has yet to be added, as `mocha` does not have it by default.
-
-Unfortunately, it is the only one out of the major testing platforms that mostly supports ES Modules (`jest` would have been the first preference, but only has experimental support). Once updates are made to other testing frameworks, a switch can be made.
+- Test is split into unit tests and integration tests.

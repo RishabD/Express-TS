@@ -1,8 +1,8 @@
-import { assert } from 'chai'
 import { alternateCase } from '@/utils/textTransform.js'
+import { describe, expect, it } from 'vitest'
 
-describe('textTransform', () => {
+describe.concurrent('textTransform', () => {
     it("Alternate case actually alternates case", () => {
-        assert.equal(alternateCase("aba"), "AbA")
+        expect(alternateCase("abab")).toEqual("AbAb")
     })
 })
